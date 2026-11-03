@@ -250,6 +250,9 @@ img.avatar { background: #fff; }
 .p2-option { align-self: flex-start; margin: 0 0 14px; padding: 5px 16px; background: #d62828; color: #fff; font: 600 20px/1.2 var(--label); letter-spacing: .14em; text-transform: uppercase; }
 .p2-ribbon { position: absolute; top: -17px; right: 22px; margin: 0; padding: 6px 16px; background: var(--gold); color: #0d0d0d; font: 600 14px/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; }
 
+.android-note { max-width: 940px; margin: 30px auto 0; padding: 14px 18px; border: 2px solid #d62828; background: #fdf0ee; font-size: 18px; text-align: center; }
+.android-note b:first-child { color: #d62828; }
+
 /* ---------- Play responsibly (footer line, membership note, page) ---------- */
 .play-safe { margin: 30px 0 0; padding: 14px 18px; border: 1px solid var(--gold); color: #fff; font-size: 17px; }
 .play-safe a { color: var(--gold); font-weight: 600; }
