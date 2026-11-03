@@ -44,7 +44,6 @@
   .byline { font: 500 14px/1.4 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 8px 0; margin-bottom: 18px; }
   .photo { aspect-ratio: 16/8; background: url('/preview-new/images/hero-home.jpg') center 65%/cover; filter: var(--photo-filter); margin-bottom: 6px; }
   .caption { font: italic 15px/1.4 var(--body); color: var(--ink-soft); margin: 0 0 18px; }
-  .lead-story .intro::first-letter { float: left; font: 900 76px/.8 var(--head); padding: 8px 10px 0 0; color: var(--red); }
   .card-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 18px; }
   .card-table caption { text-align: left; font: 600 15px/1.4 var(--label); letter-spacing: .14em; text-transform: uppercase; padding-bottom: 8px; }
   .card-table td { padding: 11px 8px; border-top: 1px solid var(--hair); vertical-align: top; }
@@ -183,7 +182,7 @@
   nav.main a:hover, nav.main a.on { background: #d4af37; color: #0d0d0d; }
   .warning { background: #0d0d0d; }
   .warning a { color: #d4af37; }
-  .lead-story .intro::first-letter, .card-table td.n, .facts b { color: #b8941f; }
+  .card-table td.n, .facts b { color: #b8941f; }
   .clip { box-shadow: 4px 4px 0 #d4af37; }
   .plan.star { border-top: 6px solid #d4af37; }
   .btn:not(.alt), .courses a.btn { color: #d4af37; }
@@ -224,6 +223,28 @@ nav.main.stuck a.nav-brand { display: flex; }
 .mast-avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); background: #fff; }
 img.avatar { background: #fff; }
 
+/* ---------- Membership: two plans (Race Day / Annual) ---------- */
+.perks { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; max-width: 940px; margin: 0 auto 30px; padding: 0; }
+.perks li { position: relative; padding-left: 26px; }
+.perks li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.plans2 { display: grid; grid-template-columns: 1fr 1.15fr; gap: 26px; max-width: 940px; margin: 0 auto; align-items: stretch; }
+.p2 { position: relative; display: flex; flex-direction: column; padding: 32px 30px; border: 2px solid var(--ink); background: var(--card); box-shadow: 6px 6px 0 var(--gold); }
+.p2 h3 { margin: 0; font: 900 34px/1.1 var(--head); }
+.p2-price { margin: 14px 0 0; font: 900 52px/1 var(--head); color: var(--red); font-variant-numeric: lining-nums; }
+.p2-per { margin: 6px 0 0; color: var(--ink-soft); }
+.p2 ul { list-style: none; margin: 18px 0 24px; padding: 0; flex: 1; }
+.p2 li { position: relative; padding: 9px 0 9px 30px; border-top: 1px solid var(--hair); }
+.p2 li::before { content: "\2713"; position: absolute; left: 0; top: 9px; color: var(--gold); font-weight: 700; font-size: 19px; }
+.p2 .btn { text-align: center; }
+.p2.annual { background: var(--foot-bg); color: #fff; border-color: var(--gold); border-top-width: 6px; }
+.p2.annual .label { color: var(--gold); }
+.p2.annual .p2-price { color: var(--gold); font-size: 60px; }
+.p2.annual .p2-per { color: #e4ede7; }
+.p2.annual li { border-top-color: var(--foot-line); }
+.p2.annual .btn:not(.alt) { background: var(--gold); border-color: var(--gold); color: #0b4a2b; }
+.p2.annual .btn:not(.alt):hover { background: #fff; border-color: #fff; color: #0b4a2b; }
+.p2-ribbon { position: absolute; top: -17px; right: 22px; margin: 0; padding: 6px 16px; background: var(--gold); color: #0d0d0d; font: 600 14px/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; }
+
 /* ---------- Inner pages (About, Warning, Team, 404) ---------- */
 .page-hero { background: var(--foot-bg); color: #fff; text-align: center; padding: 46px 20px 50px; border-bottom: 4px solid var(--gold); }
 .page-hero .label { color: var(--gold); }
@@ -263,6 +284,12 @@ img.avatar { background: #fff; }
 .form-status { margin: 12px 0 0; font-size: 18px; color: var(--gold); }
 .form-status a { color: var(--gold); }
 
+@media (max-width: 760px) {
+  .plans2 { grid-template-columns: 1fr; gap: 34px; }
+  .p2.annual { order: -1; }
+  .p2 { padding: 28px 22px; }
+  .perks { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
 @media (max-width: 600px) {
   nav.main .navbar { flex-direction: column; align-items: stretch; padding: 0; }
   nav.main.stuck a.nav-brand { justify-content: center; margin: 0; padding: 7px 10px 5px; font-size: 20px; border-bottom: 1px solid rgba(212, 175, 55, .5); }
