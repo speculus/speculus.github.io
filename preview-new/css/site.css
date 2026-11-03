@@ -249,6 +249,23 @@ img.avatar { background: #fff; }
 .p2-bonus .p2-bonus-head { margin-bottom: 6px; font: 700 21px/1.25 var(--head); color: var(--gold); }
 .p2-ribbon { position: absolute; top: -17px; right: 22px; margin: 0; padding: 6px 16px; background: var(--gold); color: #0d0d0d; font: 600 14px/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; }
 
+/* ---------- Play responsibly (footer line, membership note, page) ---------- */
+.play-safe { margin: 30px 0 0; padding: 14px 18px; border: 1px solid var(--gold); color: #fff; font-size: 17px; }
+.play-safe a { color: var(--gold); font-weight: 600; }
+.po-safe { max-width: 940px; margin: 22px auto 0; text-align: center; color: var(--ink-soft); font-size: 17px; }
+.po-safe a { color: var(--red); font-weight: 600; }
+.prose ul.signs { list-style: none; padding: 18px 22px; border-left-color: #d62828; }
+.prose ul.signs li { position: relative; padding-left: 30px; margin-bottom: 8px; }
+.prose ul.signs li::before { content: "!"; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: #d62828; color: #fff; font: 700 14px/20px var(--label); text-align: center; }
+.help-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 0 0 14px; }
+.help-card { display: flex; flex-direction: column; gap: 8px; padding: 22px; background: var(--foot-bg); color: #fff; text-decoration: none; border-top: 5px solid var(--gold); box-shadow: 5px 5px 0 var(--gold); }
+.prose a.help-card { color: #fff; font-weight: 400; }
+.help-card:hover { background: #0d5c35; }
+.hc-name { font: 700 23px/1.2 var(--head); color: var(--gold); }
+.hc-what { font-size: 17px; line-height: 1.5; color: #e4ede7; }
+.hc-link { margin-top: auto; font: 600 16px/1.3 var(--label); letter-spacing: .06em; color: var(--gold); text-transform: uppercase; }
+.hc-site { font-size: 17px; }
+
 /* ---------- Inner pages (About, Warning, Team, 404) ---------- */
 .page-hero { background: var(--foot-bg); color: #fff; text-align: center; padding: 46px 20px 50px; border-bottom: 4px solid var(--gold); }
 .page-hero .label { color: var(--gold); }
@@ -290,6 +307,7 @@ img.avatar { background: #fff; }
 
 @media (max-width: 760px) {
   .plans2 { grid-template-columns: 1fr; gap: 34px; }
+  .help-cards { grid-template-columns: 1fr; }
   .p2.annual { order: -1; }
   .p2 { padding: 28px 22px; }
   .perks { flex-direction: column; align-items: flex-start; gap: 8px; }
