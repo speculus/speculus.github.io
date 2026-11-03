@@ -227,7 +227,7 @@ img.avatar { background: #fff; }
 .perks { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; max-width: 940px; margin: 0 auto 30px; padding: 0; }
 .perks li { position: relative; padding-left: 26px; }
 .perks li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
-.plans2 { display: grid; grid-template-columns: 1fr 1.15fr; gap: 26px; max-width: 940px; margin: 0 auto; align-items: stretch; }
+.plans2 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; max-width: 940px; margin: 0 auto; align-items: stretch; }
 .p2 { position: relative; display: flex; flex-direction: column; padding: 32px 30px; border: 2px solid var(--ink); background: var(--card); box-shadow: 6px 6px 0 var(--gold); }
 .p2 h3 { margin: 0; font: 900 34px/1.1 var(--head); }
 .p2-price { margin: 14px 0 0; font: 900 52px/1 var(--head); color: var(--red); font-variant-numeric: lining-nums; }
@@ -247,6 +247,7 @@ img.avatar { background: #fff; }
 .p2-bonus p { margin: 0; font-size: 17px; line-height: 1.5; color: #e4ede7; }
 .p2-bonus .p2-bonus-tag { display: inline-block; margin-bottom: 8px; padding: 3px 10px; background: var(--gold); color: #0d0d0d; font: 600 14px/1.3 var(--label); letter-spacing: .1em; text-transform: uppercase; }
 .p2-bonus .p2-bonus-head { margin-bottom: 6px; font: 700 21px/1.25 var(--head); color: var(--gold); }
+.p2-option { align-self: flex-start; margin: 0 0 14px; padding: 5px 16px; background: #d62828; color: #fff; font: 600 20px/1.2 var(--label); letter-spacing: .14em; text-transform: uppercase; }
 .p2-ribbon { position: absolute; top: -17px; right: 22px; margin: 0; padding: 6px 16px; background: var(--gold); color: #0d0d0d; font: 600 14px/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; }
 
 /* ---------- Play responsibly (footer line, membership note, page) ---------- */
@@ -319,7 +320,6 @@ img.avatar { background: #fff; }
 @media (max-width: 760px) {
   .plans2 { grid-template-columns: 1fr; gap: 34px; }
   .help-cards { grid-template-columns: 1fr; }
-  .p2.annual { order: -1; }
   .p2 { padding: 28px 22px; }
   .perks { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
