@@ -209,6 +209,18 @@ nav.main .navbar ul { margin: 0; }
 nav.main a.nav-brand { display: none; align-items: center; gap: 10px; padding: 6px 18px 6px 4px; margin-right: auto; background: none; color: #ffffff; font: 700 22px/1 var(--head); letter-spacing: .01em; text-transform: none; white-space: nowrap; }
 nav.main a.nav-brand:hover { background: none; color: var(--gold); }
 nav.main.stuck a.nav-brand { display: flex; }
+/* The menu ALWAYS stays on one line: it tightens on narrower screens, then scrolls sideways */
+nav.main .navbar ul { flex-wrap: nowrap; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+nav.main .navbar ul::-webkit-scrollbar { display: none; }
+nav.main ul a { white-space: nowrap; }
+@media (max-width: 1240px) {
+  nav.main ul a { padding-left: 13px; padding-right: 13px; font-size: 15px; letter-spacing: .1em; }
+  nav.main a.nav-brand { font-size: 19px; padding-right: 10px; }
+}
+@media (max-width: 1040px) {
+  nav.main ul a { padding-left: 10px; padding-right: 10px; font-size: 14px; letter-spacing: .06em; }
+  nav.main a.nav-brand span { display: none; }  /* photo only, so the menu items keep their room */
+}
 .avatar { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; display: grid; place-items: center; background: var(--gold); color: #0b4a2b; font: 700 16px/1 var(--label); letter-spacing: .04em; }
 
 /* Big masthead: photo + name + "Inventor of..." as one group; the tagline spans
