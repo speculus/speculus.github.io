@@ -1,5 +1,19 @@
 // PrakashGosavi.com: shared page behaviour (all pages)
 
+// First visit on this device: show the welcome note once (18+ and responsible play)
+const welcome = document.querySelector('.welcome');
+if (welcome && !location.pathname.includes('/play-responsibly/')) {
+  let seen = false;
+  try { seen = localStorage.getItem('pg-welcome-ok') === '1'; } catch (e) {}
+  const remember = () => { try { localStorage.setItem('pg-welcome-ok', '1'); } catch (e) {} };
+  if (!seen) {
+    welcome.showModal();
+    welcome.querySelector('.welcome-ok').addEventListener('click', () => { remember(); welcome.close(); });
+    welcome.querySelector('.welcome-more').addEventListener('click', remember);
+    welcome.addEventListener('cancel', e => e.preventDefault());  // the button is the only way out
+  }
+}
+
 // Today's date in the top bar
 document.querySelectorAll('.today').forEach(el => {
   el.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
