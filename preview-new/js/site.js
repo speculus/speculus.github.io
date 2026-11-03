@@ -62,7 +62,9 @@ if (navBar && masthead) {
 // Menu: highlight the section on screen (home page) or the current page
 const links = [...document.querySelectorAll('nav.main ul a')];
 const here = links.filter(a => a.pathname === location.pathname && a.hash);
-if (here.length) {
+// Only the home page follows the scroll; inner pages keep their own menu item highlighted
+const onHome = here.some(a => a.hash === '#raceday');
+if (onHome) {
   const spy = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;
