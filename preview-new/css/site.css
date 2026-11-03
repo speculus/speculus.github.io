@@ -209,6 +209,10 @@ nav.main .navbar ul { margin: 0; }
 nav.main a.nav-brand { display: none; align-items: center; gap: 10px; padding: 6px 18px 6px 4px; margin-right: auto; background: none; color: #ffffff; font: 700 22px/1 var(--head); letter-spacing: .01em; text-transform: none; white-space: nowrap; }
 nav.main a.nav-brand:hover { background: none; color: var(--gold); }
 nav.main.stuck a.nav-brand { display: flex; }
+/* "For Horse-Owners" always stands out: white on deep maroon (gold when you are on that page) */
+nav.main ul a.owners { background: #7a1f1f; color: #ffffff; }
+nav.main ul a.owners:hover { background: #962828; color: #ffffff; }
+nav.main ul a.owners.on { background: var(--gold); color: #0d0d0d; }
 /* The menu ALWAYS stays on one line: it tightens on narrower screens, then scrolls sideways */
 nav.main .navbar ul { flex-wrap: nowrap; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 nav.main .navbar ul::-webkit-scrollbar { display: none; }

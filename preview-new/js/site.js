@@ -2,7 +2,7 @@
 
 // First visit on this device: show the welcome note once (18+ and responsible play)
 const welcome = document.querySelector('.welcome');
-if (welcome && !location.pathname.includes('/play-responsibly/')) {
+if (welcome && !/\/(play-responsibly|owners-advisory)\//.test(location.pathname)) {
   let seen = false;
   try { seen = localStorage.getItem('pg-welcome-ok') === '1'; } catch (e) {}
   const remember = () => { try { localStorage.setItem('pg-welcome-ok', '1'); } catch (e) {} };
