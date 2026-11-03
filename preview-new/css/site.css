@@ -253,6 +253,21 @@ img.avatar { background: #fff; }
 .android-note { max-width: 940px; margin: 30px auto 0; padding: 14px 18px; border: 2px solid #d62828; background: #fdf0ee; font-size: 18px; text-align: center; }
 .android-note b:first-child { color: #d62828; }
 
+/* ---------- Owners' Advisory ---------- */
+.prose ul.oa-list { list-style: none; padding: 18px 22px; }
+.prose ul.oa-list li { position: relative; padding-left: 30px; margin-bottom: 8px; }
+.prose ul.oa-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 20px; }
+.oa-private { margin: 0 0 1.4em; padding: 22px 24px; background: var(--foot-bg); color: #fff; border-top: 5px solid var(--gold); box-shadow: 5px 5px 0 var(--gold); }
+.oa-private p { margin: 0; }
+.oa-private .oa-badge { margin-bottom: 10px; font: 600 20px/1.3 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.oa-contact { font-size: 20px; line-height: 1.9; }
+form.oa-form { max-width: 740px; margin: 6px auto 0; padding: 26px; border: 2px solid var(--ink); background: var(--paper-2); box-shadow: 6px 6px 0 var(--gold); }
+.oa-form label { color: var(--ink); }
+.oa-form input, .oa-form textarea, .oa-form select { width: 100%; padding: 12px 14px; font: 18px var(--body); color: var(--ink); background: #fff; border: 2px solid var(--hair); }
+.oa-form input:focus, .oa-form textarea:focus, .oa-form select:focus { outline: none; border-color: var(--red); }
+.oa-form textarea { min-height: 0; }
+.oa-form .form-status { color: var(--red); }
+
 /* ---------- Play responsibly (footer line, membership note, page) ---------- */
 .play-safe { margin: 30px 0 0; padding: 14px 18px; border: 1px solid var(--gold); color: #fff; font-size: 17px; }
 .play-safe a { color: var(--gold); font-weight: 600; }

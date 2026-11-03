@@ -72,9 +72,8 @@ if (here.length) {
   here.forEach(a => { const s = document.querySelector(a.hash); if (s) spy.observe(s); });
 }
 
-// Contact form -> Web3Forms (free); messages go to info@PrakashGosavi.com
-const form = document.querySelector('.contact-form');
-if (form) {
+// Contact forms -> Web3Forms (free); messages go to info@PrakashGosavi.com
+document.querySelectorAll('.contact-form').forEach(form => {
   const status = form.querySelector('.form-status');
   form.addEventListener('submit', e => {
     e.preventDefault();
@@ -91,4 +90,4 @@ if (form) {
         status.innerHTML = 'Sorry, something went wrong. Please email us at <a href="mailto:info@PrakashGosavi.com">info@PrakashGosavi.com</a>.';
       });
   });
-}
+});
