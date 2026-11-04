@@ -447,3 +447,7 @@ footer#contact { min-height: calc(100vh - 48px); }
 
 /* Space between the "Learn from the inventor" box and the green contact area */
 .page-cta { margin-bottom: 64px; }
+
+/* "Download" in red on the app button */
+.btn .dl { color: #d62828; }
+.btn:hover .dl { color: inherit; }
