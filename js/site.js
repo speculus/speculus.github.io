@@ -105,3 +105,13 @@ if (toTop) {
   onScroll();
   toTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 }
+
+// Announcement ticker: hide it once its last date has passed (even if the page is an old copy)
+{
+  const tk = document.querySelector('.ticker[data-until]');
+  if (tk) {
+    const d = new Date(), p = n => String(n).padStart(2, '0');
+    const today = `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+    if (today > tk.dataset.until) tk.remove();
+  }
+}
