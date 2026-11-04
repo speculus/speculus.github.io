@@ -1,8 +1,0 @@
-# Old Wix page addresses -> new site
-/selections        /           301
-/selections/*      /           301
-/contact           /#contact   301
-/i-want-to-learn   /           301
-/account/*         /           301
-/profile/*         /           301
-/members/*         /           301
