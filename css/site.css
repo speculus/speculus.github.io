@@ -486,3 +486,4 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 
 /* "Download" in red in the Learn DH course list too */
 .courses .dl { color: #d62828; font-style: normal; }
+.po-safe a { white-space: nowrap; }
