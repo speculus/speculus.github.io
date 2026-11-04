@@ -398,3 +398,7 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
 /* Small capital labels above headings ("NEW · MEMBERS ONLY", "LEARN ONLINE" ...): larger for easier reading */
 .label { font-size: 16px; letter-spacing: .14em; }
 @media (max-width: 600px) { .label { font-size: 15px; } }
+
+/* Side boxes on the home page: labels as tags (gold; red for the warning box) */
+.sidebar .box .label { display: inline-block; padding: 4px 10px; background: var(--gold); color: #0d0d0d; }
+.sidebar .box#warning .label { background: #d62828; color: #ffffff; }
