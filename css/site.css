@@ -437,3 +437,6 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
 /* Full-disclosure note under the race-day column */
 .disclosure { margin-top: 18px; padding: 14px 18px; border-left: 5px solid var(--gold); background: #fbf3dc; font-size: 17px; line-height: 1.55; }
 .disclosure b { color: #0b4a2b; }
+
+/* Contact (menu) scrolls the green footer right up to the menu: no white gap */
+footer#contact { scroll-margin-top: 0; }
