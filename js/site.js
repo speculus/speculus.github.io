@@ -93,3 +93,12 @@ document.querySelectorAll('.contact-form').forEach(form => {
       });
   });
 });
+
+// "Back to top" button: show it once the reader has scrolled down a screen or so
+const toTop = document.querySelector('.to-top');
+if (toTop) {
+  const onScroll = () => toTop.classList.toggle('show', window.scrollY > 700);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+}

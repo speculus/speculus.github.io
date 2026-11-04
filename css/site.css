@@ -411,3 +411,19 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
   .stamp-col { gap: 16px; }
   .sample-btn { padding: 8px 8px; font-size: 13px; white-space: normal; text-align: center; width: 128px; }
 }
+
+/* About / Our Team tabs under the page heading */
+.about-tabs { display: flex; justify-content: center; gap: 0; background: var(--paper-2); border-bottom: 1px solid var(--hair); }
+.about-tabs a { padding: 14px 28px; font: 600 17px/1.2 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 4px solid transparent; }
+.about-tabs a:hover { color: var(--red); }
+.about-tabs a.on { color: var(--red); border-bottom-color: var(--gold); background: #fff; }
+
+/* "Back to top" button: appears after scrolling down */
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 50%; background: var(--foot-bg); color: var(--gold); border: 2px solid var(--gold); font: 700 22px/1 var(--label); text-decoration: none; box-shadow: 0 4px 14px rgba(0, 0, 0, .3); opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .25s, transform .25s, visibility .25s; }
+.to-top span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 2px; }
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { background: var(--gold); color: #0b4a2b; }
+@media (max-width: 600px) {
+  .about-tabs a { padding: 12px 16px; font-size: 15px; }
+  .to-top { right: 12px; bottom: 12px; width: 50px; height: 50px; }
+}
