@@ -483,3 +483,6 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 /* Membership: the "play responsibly" line, a little larger */
 .po-safe { font-size: 20px; }
 @media (max-width: 600px) { .po-safe { font-size: 19px; } }
+
+/* "Download" in red in the Learn DH course list too */
+.courses .dl { color: #d62828; font-style: normal; }
