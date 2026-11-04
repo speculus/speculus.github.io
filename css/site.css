@@ -451,3 +451,17 @@ footer#contact { min-height: calc(100vh - 48px); }
 /* "Download" in red on the app button */
 .btn .dl { color: #d62828; }
 .btn:hover .dl { color: inherit; }
+
+/* Race card: race name on line 1 and class/distance on line 2, never broken up.
+   Computers: the race column takes just the width it needs; selections fill the rest.
+   Phones: selections move under the race details, full width. */
+.card-table td.race { width: 1%; white-space: nowrap; padding-right: 26px; }
+.card-table td.race small { white-space: nowrap; }
+@media (max-width: 700px) {
+  .card-table tr { display: grid; grid-template-columns: 34px 1fr; }
+  .card-table td { border-top: 0; }
+  .card-table tr { border-top: 1px solid var(--hair); }
+  .card-table td.race { width: auto; white-space: normal; padding: 11px 8px 2px; }
+  .card-table td.n { grid-row: span 2; }
+  .card-table td:last-child { grid-column: 2; padding: 2px 8px 12px; font-weight: 600; }
+}
