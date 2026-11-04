@@ -19,6 +19,9 @@ document.querySelectorAll('.today').forEach(el => {
   el.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 });
 
+// Clips and race videos start at a comfortable 60% volume (visitors can still change it)
+document.querySelectorAll('audio, video').forEach(m => { m.volume = 0.6; });
+
 // Only one clip or race video plays at a time; starting one stops the others
 document.addEventListener('play', e => {
   document.querySelectorAll('audio, video').forEach(m => { if (m !== e.target) m.pause(); });
