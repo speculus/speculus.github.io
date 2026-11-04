@@ -89,7 +89,7 @@ document.querySelectorAll('.contact-form').forEach(form => {
       .then(data => {
         if (!data.success) throw new Error(data.message || 'Error');
         form.reset();
-        status.textContent = 'Thanks for your interest! Our representative will soon contact you.';
+        status.textContent = 'Thanks for writing to us. We will soon get in touch with you.';
       })
       .catch(() => {
         status.innerHTML = 'Sorry, something went wrong. Please email us at <a href="mailto:info@PrakashGosavi.com">info@PrakashGosavi.com</a>.';
