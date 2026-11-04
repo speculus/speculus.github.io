@@ -479,3 +479,7 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 
 /* Phones: the bar has its own row for the brand, so show the name beside the photo again */
 @media (max-width: 600px) { nav.main a.nav-brand span { display: inline; } }
+
+/* Membership: the "play responsibly" line, a little larger */
+.po-safe { font-size: 20px; }
+@media (max-width: 600px) { .po-safe { font-size: 19px; } }
