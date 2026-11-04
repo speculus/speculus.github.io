@@ -402,3 +402,12 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
 /* Side boxes on the home page: labels as tags (gold; red for the warning box) */
 .sidebar .box .label { display: inline-block; padding: 4px 10px; background: var(--gold); color: #0d0d0d; }
 .sidebar .box#warning .label { background: #d62828; color: #ffffff; }
+
+/* "Listen to free samples" button under the MOST POPULAR stamp: jumps up to the Clips section */
+.stamp-col { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.sample-btn { display: inline-block; padding: 11px 18px; background: var(--foot-bg); color: var(--gold); border: 2px solid var(--gold); font: 600 16px/1.2 var(--label); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.sample-btn:hover { background: var(--gold); color: #0b4a2b; }
+@media (max-width: 760px) {
+  .stamp-col { gap: 16px; }
+  .sample-btn { padding: 8px 8px; font-size: 13px; white-space: normal; text-align: center; width: 128px; }
+}
