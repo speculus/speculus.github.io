@@ -433,3 +433,7 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
 .about-tabs a { color: #0b4a2b; border-bottom: 0; border-radius: 4px 4px 0 0; }
 .about-tabs a:hover { background: #e9d494; color: #0b4a2b; }
 .about-tabs a.on, .about-tabs a.on:hover { background: #0b4a2b; color: var(--gold); }
+
+/* Full-disclosure note under the race-day column */
+.disclosure { margin-top: 18px; padding: 14px 18px; border-left: 5px solid var(--gold); background: #fbf3dc; font-size: 17px; line-height: 1.55; }
+.disclosure b { color: #0b4a2b; }
