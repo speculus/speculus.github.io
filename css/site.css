@@ -379,3 +379,6 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
   .page-cta { padding: 26px 18px; }
   .ratio-box .ratio { font-size: 58px; }
 }
+
+/* Top bar: the current racing season in red */
+.topbar .season { color: #d62828; font-weight: 600; }
