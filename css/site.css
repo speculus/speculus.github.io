@@ -444,3 +444,6 @@ footer#contact { scroll-margin-top: 0; }
 /* Contact area at least one screen tall, so jumping to Contact never shows white page space above it */
 footer#contact { min-height: calc(100vh - 48px); }
 @supports (height: 100svh) { footer#contact { min-height: calc(100svh - 48px); } }
+
+/* Space between the "Learn from the inventor" box and the green contact area */
+.page-cta { margin-bottom: 64px; }
