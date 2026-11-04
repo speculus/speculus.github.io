@@ -394,3 +394,7 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
   .stamp { border-width: 3px; padding: 3px; }
   .stamp-in { padding: 7px 10px; font-size: 17px; letter-spacing: .08em; white-space: normal; width: 118px; }
 }
+
+/* Small capital labels above headings ("NEW · MEMBERS ONLY", "LEARN ONLINE" ...): larger for easier reading */
+.label { font-size: 16px; letter-spacing: .14em; }
+@media (max-width: 600px) { .label { font-size: 15px; } }
