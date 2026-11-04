@@ -427,3 +427,9 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
   .about-tabs a { padding: 12px 16px; font-size: 15px; }
   .to-top { right: 12px; bottom: 12px; width: 50px; height: 50px; }
 }
+
+/* About / Our Team tabs: soft-gold band, selected tab solid green with gold letters */
+.about-tabs { background: #f3e3b3; border-bottom: 3px solid var(--gold); gap: 6px; padding-top: 8px; }
+.about-tabs a { color: #0b4a2b; border-bottom: 0; border-radius: 4px 4px 0 0; }
+.about-tabs a:hover { background: #e9d494; color: #0b4a2b; }
+.about-tabs a.on, .about-tabs a.on:hover { background: #0b4a2b; color: var(--gold); }
