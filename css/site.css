@@ -465,3 +465,17 @@ footer#contact { min-height: calc(100vh - 48px); }
   .card-table td.n { grid-row: span 2; }
   .card-table td:last-child { grid-column: 2; padding: 2px 8px 12px; font-weight: 600; }
 }
+
+/* Top button: clear of the iPhone home bar */
+.to-top { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 600px) { .to-top { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); } }
+
+/* Phones: nothing may be wider than the screen (it pushed the Top button off-screen) */
+.po-steps li { min-width: 0; }
+.po-steps a { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 760px) { .po-steps { grid-template-columns: minmax(0, 1fr); } }
+dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
+.po-steps li > span { flex: 1; min-width: 0; }
+
+/* Phones: the bar has its own row for the brand, so show the name beside the photo again */
+@media (max-width: 600px) { nav.main a.nav-brand span { display: inline; } }
