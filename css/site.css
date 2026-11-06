@@ -558,7 +558,7 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 @media (max-width: 600px) { .player { gap: 12px; padding-right: 14px; } .pl-btn { width: 50px; height: 50px; } }
 
 /* Annual BONUS box: bright red with gold and white lettering, to stand out from everything else */
-.p2-bonus { border: 3px solid #d4af37; border-radius: 12px; background: #c8102e; box-shadow: 0 4px 0 #7a0a1c; }
+.p2-bonus { border: 3px solid #d4af37; border-radius: 12px; background: #9b1c31; box-shadow: 0 4px 0 #5c0f1c; }
 .p2-bonus p { color: #ffffff; }
-.p2-bonus .p2-bonus-tag { background: #d4af37; color: #7a0a1c; font-weight: 700; border-radius: 4px; }
+.p2-bonus .p2-bonus-tag { background: #d4af37; color: #5c0f1c; font-weight: 700; border-radius: 4px; }
 .p2-bonus .p2-bonus-head { color: #ffd84d; }
