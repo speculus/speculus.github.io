@@ -565,3 +565,4 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .p2-note { margin: 10px 0 0; font-size: 15px; line-height: 1.45; text-align: center; color: #e4ede7; }
 .facts span a { color: var(--red); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .facts span a:hover { color: #0b4a2b; }
+.pg-quote { font-style: italic; font-weight: 600; color: #b85c00; }
