@@ -563,3 +563,5 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .p2-bonus .p2-bonus-tag { background: #d4af37; color: #5c0f1c; font-weight: 700; border-radius: 4px; }
 .p2-bonus .p2-bonus-head { color: #ffd84d; }
 .p2-note { margin: 10px 0 0; font-size: 15px; line-height: 1.45; text-align: center; color: #e4ede7; }
+.facts span a { color: var(--red); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.facts span a:hover { color: #0b4a2b; }
