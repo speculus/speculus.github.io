@@ -566,3 +566,8 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .facts span a { color: var(--red); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .facts span a:hover { color: #0b4a2b; }
 .pg-quote { font-style: italic; font-weight: 600; color: #b85c00; }
+
+/* Single race day buttons (one per race day on sale; past days vanish automatically) */
+.day-opt + .day-opt { margin-top: 14px; }
+.day-for { margin: 8px 0 0; font-size: 15px; line-height: 1.4; text-align: center; color: var(--ink-soft); }
+.btn.btn-off { display: block; background: #d9d6cf; border-color: #d9d6cf; color: #555; cursor: default; text-align: center; }

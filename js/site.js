@@ -187,3 +187,11 @@ if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !location.pathnam
     paint();
   });
 }
+
+// Single race day: remove a day's "Buy" button once that race day is over (data-until, India time)
+document.querySelectorAll('.day-buy').forEach(box => {
+  box.querySelectorAll('.day-opt[data-until]').forEach(opt => {
+    if (Date.now() >= Date.parse(opt.dataset.until + ':00+05:30')) opt.remove();
+  });
+  if (!box.querySelector('.day-opt')) { const c = box.querySelector('.day-closed'); if (c) c.hidden = false; }
+});
