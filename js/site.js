@@ -143,3 +143,47 @@ if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !location.pathnam
     card.querySelectorAll('.cbtn.result').forEach(b => b.addEventListener('click', () => hit(clip, 'result')));
   });
 }
+
+// Attractive clip player: replaces the browser's plain grey audio bar (the real <audio> stays underneath,
+// so counting, "Play the key moment" and one-at-a-time playing all keep working). Without JavaScript the grey bar remains.
+{
+  const fmt = s => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+  const PLAY = '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+  const PAUSE = '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>';
+  document.querySelectorAll('.clip audio').forEach(a => {
+    const name = (a.closest('.clip').querySelector('h3') || {}).textContent || 'clip';
+    const p = document.createElement('div');
+    p.className = 'player';
+    p.innerHTML = `<button type="button" class="pl-btn" aria-label="Play ${name} audio clip">${PLAY}</button>
+      <div class="pl-mid"><div class="pl-top"><span class="pl-state">Tap to listen</span><span class="pl-time">0:00 / ${a.dataset.dur ? fmt(+a.dataset.dur) : '--:--'}</span></div>
+      <input class="pl-bar" type="range" min="0" max="1000" value="0" step="1" aria-label="Position in ${name} audio clip"></div>`;
+    a.after(p);
+    a.controls = false;
+    a.hidden = true;
+    const btn = p.querySelector('.pl-btn'), bar = p.querySelector('.pl-bar'), time = p.querySelector('.pl-time'), state = p.querySelector('.pl-state');
+    const dur = () => (isFinite(a.duration) && a.duration > 0 ? a.duration : +a.dataset.dur || 0);
+    let dragging = false;
+    const paint = () => {
+      const d = dur(), pos = d ? a.currentTime / d : 0;
+      if (!dragging) bar.value = Math.round(pos * 1000);
+      bar.style.setProperty('--p', (bar.value / 10) + '%');
+      time.textContent = fmt(a.currentTime) + ' / ' + (d ? fmt(d) : '--:--');
+    };
+    btn.addEventListener('click', () => { a.paused ? a.play().catch(() => {}) : a.pause(); });
+    a.addEventListener('play', () => { p.classList.add('on', 'used'); btn.innerHTML = PAUSE; btn.setAttribute('aria-label', 'Pause ' + name + ' audio clip'); state.textContent = 'Playing'; });
+    a.addEventListener('pause', () => { p.classList.remove('on'); btn.innerHTML = PLAY; btn.setAttribute('aria-label', 'Play ' + name + ' audio clip'); state.textContent = a.ended ? 'Play again' : 'Paused'; });
+    ['timeupdate', 'loadedmetadata', 'seeked'].forEach(ev => a.addEventListener(ev, paint));
+    bar.addEventListener('input', () => {
+      dragging = true;
+      bar.style.setProperty('--p', (bar.value / 10) + '%');
+      time.textContent = fmt(bar.value / 1000 * dur()) + ' / ' + fmt(dur());
+    });
+    bar.addEventListener('change', () => {
+      dragging = false;
+      const to = bar.value / 1000 * dur();
+      const go = () => { a.currentTime = to; a.play().catch(() => {}); };
+      if (a.readyState >= 1) go(); else { a.preload = 'metadata'; a.addEventListener('loadedmetadata', go, { once: true }); a.load(); }
+    });
+    paint();
+  });
+}
