@@ -122,3 +122,24 @@ document.querySelectorAll('.clip .seek[data-seek]').forEach(btn => btn.addEventL
   const go = () => { a.currentTime = +btn.dataset.seek; a.play().catch(() => {}); };
   if (a.readyState >= 1) go(); else { a.preload = 'metadata'; a.addEventListener('loadedmetadata', go, { once: true }); a.load(); }
 }));
+
+// Private clip counter (counts go to the owner's Cloudflare report at /api/stats; live site only)
+if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !location.pathname.startsWith('/preview-new/')) {
+  const sent = new Set();
+  const hit = (clip, action, once) => {
+    const e = clip + '.' + action;
+    if (once && sent.has(e)) return;
+    sent.add(e);
+    try { navigator.sendBeacon('/api/hit?e=' + e); } catch (err) {}
+  };
+  document.querySelectorAll('.clip').forEach(card => {
+    const audio = card.querySelector('audio');
+    if (!audio) return;
+    const clip = (audio.getAttribute('src') || '').split('/').pop().replace(/\.[a-z0-9]+$/i, '').toLowerCase();
+    if (!/^[a-z0-9-]{1,60}$/.test(clip)) return;
+    audio.addEventListener('play', () => hit(clip, 'play', true));
+    card.querySelectorAll('.seek').forEach(b => b.addEventListener('click', () => hit(clip, 'moment')));
+    card.querySelectorAll('.cbtn.watch').forEach(b => b.addEventListener('click', () => { if (b.getAttribute('aria-expanded') === 'true') hit(clip, 'video', true); }));
+    card.querySelectorAll('.cbtn.result').forEach(b => b.addEventListener('click', () => hit(clip, 'result')));
+  });
+}
