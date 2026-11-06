@@ -505,3 +505,30 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
   .tk-track { animation: none; display: block; white-space: normal; text-align: center; padding: 10px 16px; line-height: 1.35; }
   .tk-half + .tk-half, .tk-item + .tk-item { display: none; } .tk-item::after { display: none; }
 }
+
+/* "Missed opportunity" feature at the top of the home page */
+.missed { display: grid; grid-template-columns: 1.35fr 1fr; gap: 32px; align-items: start; margin: 28px 0 34px; padding: 28px 30px; border: 3px solid #d4af37; border-radius: 16px; background: #fffaf0; box-shadow: 5px 5px 0 #0b4a2b; }
+.missed h2 { margin: 4px 0 12px; font: 900 clamp(32px, 4vw, 44px)/1.1 "Playfair Display", Georgia, serif; color: #9b2a1c; }
+.missed-text p { margin: 0 0 14px; }
+.missed-lead { font-size: 1.08em; }
+.missed-sign { font-style: italic; color: #0b4a2b; font-weight: 600; }
+.clips.one { grid-template-columns: 1fr; }
+.clip .tag.miss { background: #b85c00; color: #fff; }
+.clip .tag.miss:not(.lose):not(.win):not(.star)::before { content: "\26A0"; }
+.clip .seek { align-self: flex-start; margin: -4px 0 14px; padding: 8px 14px; border: 2px solid #b85c00; border-radius: 30px; background: #fff; color: #b85c00; font: 600 14px/1.2 Oswald, sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.clip .seek:hover { background: #b85c00; color: #fff; }
+.clip .miss-note { margin: 0 0 12px; padding: 10px 14px; border-left: 5px solid #b85c00; background: #fff4e5; font-size: 16px; line-height: 1.45; }
+/* Clips section with 5 clips: 3 on the first row, 2 wider ones on the second */
+.clips:not(.one) { grid-template-columns: repeat(6, 1fr); }
+.clips:not(.one) > .clip { grid-column: span 2; }
+.clips:not(.one) > .clip:nth-child(n+4) { grid-column: span 3; }
+@media (max-width: 900px) {
+  .missed { grid-template-columns: 1fr; padding: 22px 20px; }
+  .clips:not(.one) { grid-template-columns: 1fr 1fr; }
+  .clips:not(.one) > .clip, .clips:not(.one) > .clip:nth-child(n+4) { grid-column: auto; }
+  .clips:not(.one) > .clip:nth-child(5) { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .missed { margin: 18px 0 26px; padding: 18px 16px; box-shadow: 3px 3px 0 #0b4a2b; }
+  .clips:not(.one) { grid-template-columns: 1fr; }
+}

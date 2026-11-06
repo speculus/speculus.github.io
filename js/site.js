@@ -115,3 +115,10 @@ if (toTop) {
     if (today > tk.dataset.until) tk.remove();
   }
 }
+
+// "Play the key moment": start the clip at the marked second
+document.querySelectorAll('.clip .seek[data-seek]').forEach(btn => btn.addEventListener('click', () => {
+  const a = btn.closest('.clip').querySelector('audio');
+  const go = () => { a.currentTime = +btn.dataset.seek; a.play().catch(() => {}); };
+  if (a.readyState >= 1) go(); else { a.preload = 'metadata'; a.addEventListener('loadedmetadata', go, { once: true }); a.load(); }
+}));
