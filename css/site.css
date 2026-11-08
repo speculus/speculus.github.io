@@ -494,13 +494,14 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 /* Running announcement ticker (very top of every page) */
 .ticker { background: #0b4a2b; color: #f4ecd8; border-bottom: 3px solid #d4af37; overflow: hidden; white-space: nowrap; font: 600 17px/1 "Source Serif 4", Georgia, serif; }
 .ticker b { color: #d4af37; }
-.tk-track { display: inline-flex; padding: 11px 0; animation: tk-run 50s linear infinite; }
+.ticker a.tk-link { color: #d4af37; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.tk-track { display: inline-flex; padding: 11px 0; animation: tk-run var(--tk-dur, 50s) linear infinite; }
 .tk-half { display: inline-flex; flex-shrink: 0; }
 .tk-item { padding: 0 28px; }
 .tk-item::after { content: "\2605"; color: #d4af37; margin-left: 56px; }
 .ticker:hover .tk-track { animation-play-state: paused; }
 @keyframes tk-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (max-width: 640px) { .ticker { font-size: 15px; } .tk-track { animation-duration: 42s; } }
+@media (max-width: 640px) { .ticker { font-size: 15px; } .tk-track { animation-duration: calc(var(--tk-dur, 50s) * 0.84); } }
 @media (prefers-reduced-motion: reduce) {
   .tk-track { animation: none; display: block; white-space: normal; text-align: center; padding: 10px 16px; line-height: 1.35; }
   .tk-half + .tk-half, .tk-item + .tk-item { display: none; } .tk-item::after { display: none; }
