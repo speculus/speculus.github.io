@@ -500,9 +500,9 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .tk-half { display: inline-flex; flex-shrink: 0; }
 .tk-item { padding: 0 28px; }
 .tk-item::after { content: "\2605"; color: #d4af37; margin-left: 56px; }
-.ticker:hover .tk-track { animation-play-state: paused; }
+.ticker:hover .tk-track, .ticker:active .tk-track { animation-play-state: paused; }
 @keyframes tk-run { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (max-width: 640px) { .ticker { font-size: 15px; } .tk-track { animation-duration: calc(var(--tk-dur, 50s) * 0.84); } }
+@media (max-width: 640px) { .ticker { font-size: 15px; } .tk-track { animation-duration: var(--tk-dur, 50s); } }
 @media (prefers-reduced-motion: reduce) {
   .tk-track { animation: none; display: block; white-space: normal; text-align: center; padding: 10px 16px; line-height: 1.35; }
   .tk-half + .tk-half, .tk-item + .tk-item { display: none; } .tk-item::after { display: none; }
