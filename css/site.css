@@ -495,6 +495,7 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .ticker { background: #0b4a2b; color: #f4ecd8; border-bottom: 3px solid #d4af37; overflow: hidden; white-space: nowrap; font: 600 17px/1 "Source Serif 4", Georgia, serif; }
 .ticker b { color: #d4af37; }
 .ticker a.tk-link { color: #d4af37; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.tk-sep { color: #d4af37; font-weight: 700; margin: 0 22px; }
 .tk-track { display: inline-flex; padding: 11px 0; animation: tk-run var(--tk-dur, 50s) linear infinite; }
 .tk-half { display: inline-flex; flex-shrink: 0; }
 .tk-item { padding: 0 28px; }
