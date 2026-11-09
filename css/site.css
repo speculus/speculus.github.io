@@ -491,6 +491,9 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 
 /* "Download" in red in the Learn DH course list too */
 .courses .dl { color: #d62828; font-style: normal; }
+/* the app link is not a course: grey box so it stands apart from the course list */
+.courses li.app-item { background: #e6e4df; border: 1px solid #c2bfb7; border-radius: 6px; padding: 14px 18px; margin-top: 16px; }
+.courses li.app-item a::before { content: "\1F4F1"; margin-right: 8px; }
 .po-safe a { white-space: nowrap; }
 
 /* "Courtesy: mid-day" in bold */
