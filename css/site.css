@@ -234,6 +234,8 @@ nav.main ul a { white-space: nowrap; }
 .mast-text { display: flex; flex-direction: column; }
 .masthead .mast-text h1 { white-space: nowrap; font-size: clamp(30px, 8vw, 88px); }
 .mast-sub { width: 0; min-width: 100%; margin-top: 6px; font: italic 400 clamp(13px, 1.9vw, 21px)/1.3 var(--body); color: var(--ink-soft); }
+.mast-sub .ms-dh { color: var(--ink); font-weight: 600; }
+.mast-sub .ms-tm { color: #d62828; font-style: normal; font-weight: 600; margin-left: .1em; }
 .mast-tag { width: 0; min-width: 100%; display: flex; justify-content: space-between; align-items: center; font: 600 clamp(12px, 1.7vw, 18px)/1.2 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--red); white-space: nowrap; }
 .mast-tag i { font-style: normal; color: var(--gold); font-weight: 500; }
 .mast-avatar { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); background: #fff; }
