@@ -504,6 +504,8 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .ticker b { color: #d4af37; }
 .ticker a.tk-link { color: #d4af37; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .tk-sep { color: #d4af37; font-weight: 700; margin: 0 22px; }
+.tk-ico { width: 1.15em; height: 1.15em; vertical-align: -0.2em; margin-right: 6px; fill: none; stroke: #ffffff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.tk-ico rect { fill: #ffffff; }
 .tk-track { display: inline-flex; padding: 11px 0; animation: tk-run var(--tk-dur, 50s) linear infinite; will-change: transform; backface-visibility: hidden; }
 .tk-half { display: inline-flex; flex-shrink: 0; }
 .tk-item { padding: 0 28px; }
