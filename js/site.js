@@ -195,3 +195,58 @@ document.querySelectorAll('.day-buy').forEach(box => {
   });
   if (!box.querySelector('.day-opt')) { const c = box.querySelector('.day-closed'); if (c) c.hidden = false; }
 });
+
+// Email links on a laptop/desktop: most computers have no email program set up, so a plain
+// "mailto" link does nothing or shows a confusing Windows pop-up. Instead show a box with one-click
+// buttons that open Gmail / Outlook / Yahoo in the browser with our address already in "To".
+// Phones and tablets keep the normal link (it opens their mail app fine).
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  let box = null;
+  const make = addr => {
+    const d = document.createElement('dialog');
+    d.className = 'mail-box';
+    const enc = encodeURIComponent(addr);
+    d.innerHTML = `<p class="label">Write to us</p>
+      <h2>${addr}</h2>
+      <p>Choose your email. A new message opens with our address already filled in.</p>
+      <div class="mb-btns">
+        <a class="mb-btn" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${enc}">Open in Gmail</a>
+        <a class="mb-btn" target="_blank" rel="noopener" href="https://outlook.live.com/mail/0/deeplink/compose?to=${enc}">Open in Outlook</a>
+        <a class="mb-btn" target="_blank" rel="noopener" href="https://compose.mail.yahoo.com/?to=${enc}">Open in Yahoo Mail</a>
+        <button type="button" class="mb-btn mb-copy">Copy the address</button>
+      </div>
+      <p class="mb-more"><a href="#" class="mb-form">Or send us a message using the form on this page</a></p>
+      <p class="mb-more"><a href="mailto:${addr}" class="mb-app">Or use the email program on this computer</a></p>
+      <button type="button" class="mb-close" aria-label="Close">&#10005;</button>`;
+    document.body.append(d);
+    const copy = d.querySelector('.mb-copy');
+    copy.addEventListener('click', () => {
+      const done = () => { copy.textContent = 'Copied! Paste it into your email'; copy.classList.add('done'); };
+      if (navigator.clipboard) navigator.clipboard.writeText(addr).then(done, () => prompt('Copy this address:', addr));
+      else prompt('Copy this address:', addr);
+    });
+    d.querySelector('.mb-form').addEventListener('click', e => {
+      e.preventDefault();
+      d.close();
+      const f = document.querySelector('.contact-form');
+      if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'start' }); setTimeout(() => (f.querySelector('input:not([type=hidden]):not(.hp)') || f).focus({ preventScroll: true }), 600); }
+      else location.href = '/#contact';
+    });
+    d.querySelector('.mb-app').addEventListener('click', () => d.close());
+    d.querySelectorAll('.mb-btn[href]').forEach(a => a.addEventListener('click', () => d.close()));
+    d.querySelector('.mb-close').addEventListener('click', () => d.close());
+    d.addEventListener('click', e => { if (e.target === d) d.close(); });
+    return d;
+  };
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="mailto:"]');
+    if (!a || a.classList.contains('mb-app') || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    e.preventDefault();
+    const addr = decodeURIComponent(a.getAttribute('href').slice(7).split('?')[0]);
+    if (box && box.dataset.addr !== addr) { box.remove(); box = null; }
+    if (!box) { box = make(addr); box.dataset.addr = addr; }
+    const copy = box.querySelector('.mb-copy');
+    copy.textContent = 'Copy the address'; copy.classList.remove('done');
+    box.showModal();
+  });
+}
