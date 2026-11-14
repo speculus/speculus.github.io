@@ -459,18 +459,15 @@ footer#contact { min-height: calc(100vh - 48px); }
 .btn .dl { color: #d62828; }
 .btn:hover .dl { color: inherit; }
 
-/* Race card: race name on line 1 and class/distance on line 2, never broken up.
-   Computers: the race column takes just the width it needs; selections fill the rest.
-   Phones: selections move under the race details, full width. */
-.card-table td.race { width: 1%; white-space: nowrap; padding-right: 26px; }
-.card-table td.race small { white-space: nowrap; }
+/* Race card, on every screen: race name on line 1, class/distance on line 2,
+   and the 1-2-3 selections on line 3, lined up with the first letter of the race name. */
+.card-table tr { display: grid; grid-template-columns: 40px 1fr; border-top: 1px solid var(--hair); }
+.card-table td { border-top: 0; }
+.card-table td.race { padding: 11px 8px 2px; }
+.card-table td.n { grid-row: span 2; }
+.card-table td:last-child { grid-column: 2; padding: 4px 8px 12px; }
 @media (max-width: 700px) {
-  .card-table tr { display: grid; grid-template-columns: 34px 1fr; }
-  .card-table td { border-top: 0; }
-  .card-table tr { border-top: 1px solid var(--hair); }
-  .card-table td.race { width: auto; white-space: normal; padding: 11px 8px 2px; }
-  .card-table td.n { grid-row: span 2; }
-  .card-table td:last-child { grid-column: 2; padding: 4px 8px 12px; }
+  .card-table tr { grid-template-columns: 34px 1fr; }
 }
 
 /* Top button: clear of the iPhone home bar */
