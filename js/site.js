@@ -106,14 +106,17 @@ if (toTop) {
   toTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 }
 
-// Announcement ticker: hide it once its last date has passed (even if the page is an old copy)
+// Announcement tickers: show each one only between its India-time "from" and "until" times, checking every
+// half minute, so a page left open swaps messages at the right moment (and old copies of a page tidy themselves up)
 {
-  const tk = document.querySelector('.ticker[data-until]');
-  if (tk) {
-    const d = new Date(), p = n => String(n).padStart(2, '0');
-    const today = `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
-    if (today > tk.dataset.until) tk.remove();
-  }
+  const ist = s => Date.parse(s + ':00+05:30');
+  const check = () => document.querySelectorAll('.ticker[data-until]').forEach(tk => {
+    const n = Date.now(), f = tk.dataset.from;
+    if (n >= ist(tk.dataset.until)) tk.remove();
+    else tk.hidden = !!(f && n < ist(f));
+  });
+  check();
+  setInterval(check, 30000);
 }
 
 // "Play the key moment": start the clip at the marked second
