@@ -46,7 +46,7 @@
   .caption { font: italic 15px/1.4 var(--body); color: var(--ink-soft); margin: 0 0 18px; }
   /* Special articles (not the selections column): <article class="lead-story feature"> - slightly larger reading text on desktop; phones unchanged */
   @media (min-width: 601px) {
-    .lead-story.feature p { font-size: 20px; }
+    .lead-story.feature p:not(.label) { font-size: 20px; }
     .lead-story.feature .intro { font-size: 21px; }
     .lead-story.feature .caption { font-size: 16px; }
   }
