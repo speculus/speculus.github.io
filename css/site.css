@@ -629,3 +629,18 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .mb-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; color: #fff; font-size: 26px; line-height: 1; cursor: pointer; padding: 6px; }
 .mb-close:hover { color: var(--gold); }
 #mumbai-season { scroll-margin-top: 124px; }
+
+/* Mumbai Season box: black on gold, to match its Classplus thumbnail (23 Nov 2026) */
+.p2.season { background: #e5bf66; color: #141414; border-color: #141414; border-top-width: 6px; }
+.p2.season .label, .p2.season h3, .p2.season .p2-price { color: #141414; }
+.p2.season .p2-per { color: #2b2418; }
+.p2.season li { border-top-color: rgba(0, 0, 0, .22); }
+.p2.season li::before { color: #141414; }
+.p2.season .season-why { background: rgba(255, 255, 255, .4); border-left-color: #141414; color: #141414; }
+.p2.season .btn { background: #141414; border-color: #141414; color: #e5bf66; }
+.p2.season .btn:hover { background: #6e1c22; border-color: #6e1c22; color: #fff; }
+.p2.season .p2-note.season-note { color: #2b2418; }
+.p2.season .p2-bonus { background: #141414; border: 3px solid #141414; border-radius: 12px; box-shadow: 0 4px 0 #6e1c22; }
+.p2.season .p2-bonus p { color: #f8f0e3; }
+.p2.season .p2-bonus .p2-bonus-tag { background: #e5bf66; color: #141414; }
+.p2.season .p2-bonus .p2-bonus-head { color: #e5bf66; }
