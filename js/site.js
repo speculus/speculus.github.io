@@ -83,6 +83,11 @@ document.querySelectorAll('.contact-form').forEach(form => {
   form.addEventListener('submit', e => {
     e.preventDefault();
     if (form.botcheck && form.botcheck.checked) return;
+    // Tick-box groups (e.g. racing centres): join all ticked choices into one hidden field
+    form.querySelectorAll('[data-field]').forEach(g => {
+      form.querySelector('#' + g.dataset.field).value =
+        [...g.querySelectorAll('input[type=checkbox]:checked')].map(c => c.value).join(', ') || 'Not given';
+    });
     status.textContent = 'Sending…';
     fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
       .then(r => r.json())
