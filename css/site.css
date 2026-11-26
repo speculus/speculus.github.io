@@ -260,8 +260,11 @@ img.avatar { background: #fff; }
 .season-why { margin: 0 0 18px; padding: 12px 14px; background: var(--paper-2); border-left: 4px solid var(--gold); font-size: 16px; line-height: 1.45; }
 .p2-note.season-note { color: var(--ink-soft); }
 @media (max-width: 1060px) { .plans2 { grid-template-columns: 1fr 1fr; } .p2.annual { grid-column: 1 / -1; } }
+.plans2.two { grid-template-columns: 1.15fr 1fr; max-width: 900px; }
+@media (max-width: 1060px) { .plans2.two .p2.annual { grid-column: auto; } }
 .p2 { position: relative; display: flex; flex-direction: column; padding: 32px 30px; border: 2px solid var(--ink); background: var(--card); box-shadow: 6px 6px 0 var(--gold); }
 .p2 h3 { margin: 0; font: 900 34px/1.1 var(--head); }
+.p2-valid { display: inline-block; vertical-align: middle; margin-left: 6px; font: 600 15px/1.2 var(--body); color: #fff; white-space: nowrap; }
 .p2-price { margin: 14px 0 0; font: 900 52px/1 var(--head); color: var(--red); font-variant-numeric: lining-nums; }
 .p2-per { margin: 6px 0 0; color: var(--ink-soft); }
 .p2 ul { list-style: none; margin: 18px 0 24px; padding: 0; flex: 1; }
@@ -384,7 +387,7 @@ footer .wrap > .foot-info:first-child { margin-top: 0; padding-top: 0; border-to
 .form-status a { color: var(--gold); }
 
 @media (max-width: 760px) {
-  .plans2 { grid-template-columns: 1fr; gap: 34px; }
+  .plans2, .plans2.two { grid-template-columns: 1fr; gap: 34px; }
   .help-cards { grid-template-columns: 1fr; }
   .p2 { padding: 28px 22px; }
   .perks { flex-direction: column; align-items: flex-start; gap: 8px; }

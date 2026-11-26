@@ -203,6 +203,18 @@ if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !location.pathnam
   });
 }
 
+// Offers that close at a set time (data-hide-after, India time): remove the card, close up the gap in the
+// price cards, and renumber the options that come after it (data-later-text)
+document.querySelectorAll('[data-hide-after]').forEach(el => {
+  if (Date.now() < Date.parse(el.dataset.hideAfter + ':00+05:30')) return;
+  const grid = el.parentElement;
+  el.remove();
+  if (grid && grid.classList.contains('plans2')) {
+    grid.classList.add('two');
+    grid.querySelectorAll('[data-later-text]').forEach(t => { t.textContent = t.dataset.laterText; });
+  }
+});
+
 // Single race day: remove a day's "Buy" button once that race day is over (data-until, India time)
 document.querySelectorAll('.day-buy').forEach(box => {
   box.querySelectorAll('.day-opt[data-until]').forEach(opt => {
