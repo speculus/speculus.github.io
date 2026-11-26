@@ -215,6 +215,11 @@ document.querySelectorAll('[data-hide-after]').forEach(el => {
   }
 });
 
+// Wording that switches on at a set time (data-show-after, India time; the element starts hidden)
+document.querySelectorAll('[data-show-after]').forEach(el => {
+  if (Date.now() >= Date.parse(el.dataset.showAfter + ':00+05:30')) el.hidden = false;
+});
+
 // Single race day: remove a day's "Buy" button once that race day is over (data-until, India time)
 document.querySelectorAll('.day-buy').forEach(box => {
   box.querySelectorAll('.day-opt[data-until]').forEach(opt => {
