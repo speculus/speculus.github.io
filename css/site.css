@@ -602,7 +602,18 @@ dialog.welcome { box-sizing: border-box; max-width: calc(100vw - 24px); }
 .day-opt + .day-opt { margin-top: 14px; }
 .day-for { margin: 10px 0 0; font-size: 17px; line-height: 1.4; text-align: center; color: var(--ink); }
 .day-for b { font-weight: 700; }
-.btn.btn-off { display: block; background: #d9d6cf; border-color: #d9d6cf; color: #555; cursor: default; text-align: center; }
+.btn.btn-off { display: block; background: #d9d6cf; border-color: #d9d6cf; color: #555; cursor: default; text-align: center; line-height: 1.35; }
+.interest-lead { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--hair); font-size: 21px; font-weight: 700; }
+.interest-open { display: block; width: 100%; margin-top: 8px; cursor: pointer; line-height: 1.35; text-align: center; }
+form.interest-form { grid-template-columns: 1fr; gap: 12px; margin: 14px 0 0; padding: 16px; border: 2px solid var(--gold); background: var(--paper-2); }
+form.interest-form[hidden] { display: none; }
+.interest-form label { color: var(--ink); }
+.interest-form input { padding: 12px 14px; font: 18px var(--body); color: var(--ink); background: #fff; border: 2px solid var(--hair); }
+.interest-form input:focus { outline: none; border-color: var(--red); }
+.interest-intro { margin: 0; font-size: 17px; line-height: 1.4; color: var(--ink); }
+.interest-form .btn { width: 100%; cursor: pointer; }
+.interest-form .form-status { margin: 8px 0 0; color: var(--red); font-size: 17px; }
+.interest-form .hp { display: none; }
 
 /* ---------- Stock Market Findings (hidden draft page; NO racing on it) ---------- */
 .sk-head { background: var(--red); color: #fff; border-bottom: 4px solid var(--gold); padding: 34px 0 30px; text-align: center; }

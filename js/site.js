@@ -78,7 +78,14 @@ if (onHome) {
 }
 
 // Contact forms -> Web3Forms (free); messages go to info@PrakashGosavi.com
-document.querySelectorAll('.contact-form').forEach(form => {
+// Early-interest button (Race Day box): show the small form when clicked
+document.querySelectorAll('.interest-open').forEach(b => b.addEventListener('click', () => {
+  const f = document.getElementById(b.getAttribute('aria-controls'));
+  f.hidden = !f.hidden; b.setAttribute('aria-expanded', String(!f.hidden));
+  if (!f.hidden) f.querySelector('input:not([type=hidden]):not(.hp)').focus();
+}));
+
+document.querySelectorAll('.contact-form, .interest-form').forEach(form => {
   const status = form.querySelector('.form-status');
   form.addEventListener('submit', e => {
     e.preventDefault();
