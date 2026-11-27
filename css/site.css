@@ -58,6 +58,14 @@
   .card-table .race small { display: block; font-weight: 400; color: var(--ink-soft); font-size: 15px; }
   .recs { margin-top: 18px; padding: 16px 20px; border: 2px solid var(--ink); background: var(--paper-2); }
   .recs p { margin: 0; }
+  /* "The Dates" box in the Mumbai season preview (Nov 2026) */
+  .season-dates { margin: 22px 0 6px; padding: 16px 20px 10px; border: 2px solid var(--gold); background: var(--paper-2); }
+  .season-dates .sd-head { margin: 0 0 8px; font: 900 24px/1.2 var(--head); }
+  .season-dates table { width: 100%; border-collapse: collapse; font-size: 18px; line-height: 1.45; }
+  .season-dates th { text-align: left; vertical-align: top; white-space: nowrap; padding: 7px 18px 7px 0; font: 600 15px/1.6 var(--label); letter-spacing: .08em; text-transform: uppercase; }
+  .season-dates td { padding: 7px 0; }
+  .season-dates tr + tr th, .season-dates tr + tr td { border-top: 1px solid var(--hair); }
+  @media (max-width: 560px) { .season-dates th, .season-dates td { display: block; padding: 0; border: 0 !important; } .season-dates th { padding-top: 9px; } .season-dates td { padding-bottom: 6px; } }
   .courtesy { margin: 12px 0 0; font-style: italic; color: var(--ink-soft); }
 
   .sidebar { padding-left: 30px; }

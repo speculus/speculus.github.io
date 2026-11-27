@@ -139,7 +139,7 @@ document.querySelectorAll('.clip .seek[data-seek]').forEach(btn => btn.addEventL
 }));
 
 // Private clip counter (counts go to the owner's Cloudflare report at /api/stats; live site only)
-if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !location.pathname.startsWith('/preview-new/')) {
+if (/^(www\.)?prakashgosavi\.com$/i.test(location.hostname) && !document.querySelector('meta[name="pg-preview"]')) {
   const sent = new Set();
   const hit = (clip, action, once) => {
     const e = clip + '.' + action;
